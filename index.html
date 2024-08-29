@@ -14,22 +14,36 @@
 
 <body>
 
-  Perfume
+  <main class="container"> <!-- on desktop will center the div card and the attribution ele using grid or flexbox-->
+    <div class="card"> <!--on desktop will use flex to have the picture and image next to each other-->
 
-  Gabrielle Essence Eau De Parfum
 
-  A floral, solar and voluptuous interpretation composed by Olivier Polge,
-  Perfumer-Creator for the House of CHANEL.
+      <picture class="card-image">
+        <!--download and use the desktop image if the viewport width is above 800px otherwise use mobile image 
+        i don't want the image to overflow on small screen size(320) so the width will be set to 310px for mobile so i can have some padding
+        for the desktop i'll use the real dimension of the image
+        -->
+        <source media="(min-width: 800px)" srcset="images/image-product-desktop.jpg" width="600" height="900">
+        <img src="images/image-product-mobile.jpg" alt="Eau de Parfum" width="310" height="350">
+      </picture>
 
-  $149.99
-  $169.99
+      <section class="card-content">
+        Perfume
+        Gabrielle Essence Eau De Parfum
+        A floral, solar and voluptuous interpretation composed by Olivier Polge,
+        Perfumer-Creator for the House of CHANEL.
+        $149.99
+        $169.99
+        Add to Cart
+      </section>
+    </div>
 
-  Add to Cart
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </main>
 </body>
 
 </html>
