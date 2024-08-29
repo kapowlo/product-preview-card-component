@@ -1,11 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-body {
-  background-color: steelblue;
+
+:root {
+  /*primary colors */
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  /*neutral colors */
+  --dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
 }
+/*----------------BODY + GENERAL STYLES ----------------------- */
+
+body {
+  font-family: "Montserrat", sans-serif; /*font Weights: 500 and 700 */
+  /*font-family: "Fraunces", serif; */ /*font Weight: 700 used for the big bolded title */
+}
+
+/*----------------CONTAINER STYLES-----------------------  */
+
+/*----------------CARD STYLES-----------------------  */
 
 /*----------------ATTRIBUTION STYLES----------------------- */
 
