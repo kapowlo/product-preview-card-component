@@ -18,17 +18,19 @@
     <div class="card"> <!--on desktop will use flex to have the picture and image next to each other-->
 
 
-      <picture class="card-image">
+      <picture class="card-image-container">
         <!--download and use the desktop image if the viewport width is above 800px otherwise use mobile image 
         i don't want the image to overflow on small screen size(320) so the width will be set to 310px for mobile so i can have some padding
+        changed width of mobile img from 310 to 320 the mobile img  was not taking up the full space of its container(picture)
+        
         for the desktop i'll use the real dimension of the image
         -->
         <source media="(min-width: 800px)" srcset="images/image-product-desktop.jpg" width="600" height="900">
-        <img src="images/image-product-mobile.jpg" alt="Eau de Parfum" width="310" height="350">
+        <img src="images/image-product-mobile.jpg" alt="Eau de Parfum" width="320" height="350">
       </picture>
 
       <section class="card-content">
-        <h3 class="card__capitalized-word">Perfume</h3>
+        <h3 class="card__capitalized-word small">Perfume</h3>
         <h1 class="card__title">Gabrielle Essence Eau De Parfum</h1>
         <p class="card__info small">
           A floral, solar and voluptuous interpretation composed by Olivier Polge,
@@ -40,8 +42,8 @@
         </div>
 
 
-        <button> <img src="images/icon-cart.svg" class="shopping-card-icon" alt="shopping cart" width="50"
-            height="50"><a href="#" class="small"> Add to
+        <button> <img src="images/icon-cart.svg" class="shopping-card-icon" alt="shopping cart" width="20"
+            height="20"><a href="#" class="small"> Add to
             Cart</a></button>
 
       </section>
@@ -50,7 +52,7 @@
 
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="#">kapowlo</a>.
     </div>
   </main>
 </body>
