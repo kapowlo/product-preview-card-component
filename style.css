@@ -62,7 +62,6 @@ a {
 /*----------------CARD STYLES-----------------------  */
 .card {
   background-color: var(--white);
-  max-width: 800px;
   border-radius: 0 0 10px 10px; /* only add border -radius on the bottom right and left */
 }
 .card-image-container img {
@@ -101,21 +100,21 @@ a {
   font-weight: 500;
 }
 
-.card_price-wrapper {
+.card__price-wrapper {
   margin-block-end: var(--small-margin);
   display: flex; /*put align-self start on the small text to get it above? */
   gap: 0.75rem;
 }
-.card_price-wrapper .green-bold {
+.card__price-wrapper .green-bold {
   color: var(--dark-cyan);
   font-weight: 700;
 }
 
-.card_price-wrapper p:nth-child(1) {
+.card__price-wrapper p:nth-child(1) {
   /*selects only the first p element */
   font-size: clamp(1.25rem, 1.2rem + 1.5vw, 3rem);
 }
-.card_price-wrapper p:last-child {
+.card__price-wrapper p:last-child {
   /*selects only the second p element which happens to be the last child   */
   font-size: clamp(0.69rem, 0.45rem + 1.2vw, 1rem);
 }
