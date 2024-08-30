@@ -1,3 +1,7 @@
+/*Mobile first approach 
+with media queries to make webpage look good on larger screens
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
@@ -7,31 +11,131 @@
 }
 
 :root {
+  --small-margin: 1rem;
+
   /*primary colors */
   --dark-cyan: hsl(158, 36%, 37%);
   --cream: hsl(30, 38%, 92%);
   /*neutral colors */
   --dark-blue: hsl(212, 21%, 14%);
-  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --dark-grayish: hsl(228, 12%, 48%);
   --white: hsl(0, 0%, 100%);
 }
-/*----------------BODY + GENERAL STYLES ----------------------- */
+/*----------------BODY + GENERAL STYLES(links,button hover/focus state) ----------------------- */
 
 body {
   font-family: "Montserrat", sans-serif; /*font Weights: 500 and 700 */
-  /*font-family: "Fraunces", serif; */ /*font Weight: 700 used for the big bolded title */
+}
+
+button {
+  background-color: var(--dark-cyan);
+  padding: 9px 18px;
+  border-radius: 8px;
+  inline-size: 100%; /*similar to width */
+
+  font-size: inherit;
+}
+button:hover,
+button:focus {
+  /*on hover/focus the bg color gets dark so i'll reduce the lightness value  */
+  background-color: hsl(158, 36%, 17%);
+}
+
+.small,
+button.small {
+  /*text should not get below 13px on small screens or above 20px on very large screens */
+  font-size: clamp(0.69rem, 0.45rem + 1.2vw, 1rem);
+}
+
+a {
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: none;
 }
 
 /*----------------CONTAINER STYLES-----------------------  */
+.container {
+  background-color: var(--cream);
+  padding: 1em;
+}
 
 /*----------------CARD STYLES-----------------------  */
+.card {
+  background-color: var(--white);
+  max-width: 800px;
+  border-radius: 0 0 10px 10px; /* only add border -radius on the bottom right and left */
+}
+.card-image-container img {
+  /*control the width of the mobile image it should not overflow, but if i set max-width 100%(max-inline-size) there is too much white space
+  inside of the img container which is the  picture element
+  */
+  border-radius: 10px 10px 0 0; /*only add border-radius on the otp left and right */
+  inline-size: 100%; /*same as width but logical properties are better as they adapt based on the writing mode */
+}
+.card > :not(picture) {
+  /*targets direct children of card except picture element */
+  padding: 1rem;
+}
+.card__capitalized-word {
+  /*same as margin-bottom, i want the capitalized word to have equal spacing
+  there is 1 rem of padding inside of the card, so i'll add 1rem of spacing below the capitalized word
+  */
+  margin-block-end: var(--small-margin);
+  text-transform: uppercase;
+  color: var(--dark-grayish);
+  letter-spacing: 0.2rem;
+  font-weight: 500;
+}
+
+.card__title {
+  margin-block-end: var(--small-margin);
+
+  font-family: "Fraunces", serif; /*font Weight: 700 used for the big bolded title */
+  font-weight: 700;
+  /*at the smallest screen 320px don't go below 28px at largest it stops at 43 ish px */
+  font-size: clamp(1.25rem, 1.2rem + 1.5vw, 3rem);
+}
+.card__info {
+  margin-block-end: var(--small-margin);
+  color: var(--dark-grayish);
+  font-weight: 500;
+}
+
+.card_price-wrapper {
+  margin-block-end: var(--small-margin);
+  display: flex; /*put align-self start on the small text to get it above? */
+  gap: 0.75rem;
+}
+.card_price-wrapper .green-bold {
+  color: var(--dark-cyan);
+  font-weight: 700;
+}
+
+.card_price-wrapper p:nth-child(1) {
+  /*selects only the first p element */
+  font-size: clamp(1.25rem, 1.2rem + 1.5vw, 3rem);
+}
+.card_price-wrapper p:last-child {
+  /*selects only the second p element which happens to be the last child   */
+  font-size: clamp(0.69rem, 0.45rem + 1.2vw, 1rem);
+}
+
+.card button {
+  /*both the icon of the shopping cart and the text add to cart should be centered  */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.51em;
+
+  color: var(--white);
+}
 
 /*----------------ATTRIBUTION STYLES----------------------- */
 
 .attribution {
-  font-size: 11px;
+  padding-block-start: 1rem; /*add some space at the top  */
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.51rem;
 }
 
 .attribution a {
