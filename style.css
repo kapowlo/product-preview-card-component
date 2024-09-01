@@ -21,7 +21,7 @@ with media queries to make webpage look good on larger screens
   --dark-grayish: hsl(228, 12%, 48%);
   --white: hsl(0, 0%, 100%);
 }
-/*----------------BODY + GENERAL STYLES(links,button hover/focus state) ----------------------- */
+/*--------------------------------------BODY + GENERAL STYLES(links,button hover/focus state) ----------------------- */
 
 body {
   font-family: "Montserrat", sans-serif; /*font Weights: 500 and 700 */
@@ -53,17 +53,31 @@ a {
   text-decoration: none;
 }
 
-/*----------------CONTAINER STYLES-----------------------  */
+/*----------------------------------------------------CONTAINER STYLES-------------------------------------------------  */
 .container {
   background-color: var(--cream);
   padding: 1em;
 }
 
-/*----------------CARD STYLES-----------------------  */
+/*-------------------------------------------------------CARD STYLES----------------------------------------------------  */
+/*BUG:tiny white space on the top left and top right corners of the image(occurs on mobile and desktop) 
+comment:removing the border radius on the img solves the problem.
+tried adding border-radius to picture element which is the container of the image,doesn't work
+
+
+solution: fixed it by changing the border-radius on the card (top left/right) from 0 0 to 10px 10px 
+.card{ border-radius:10px 10px 10px 10px ;} --->fixes white space bug
+
+*/
+
 .card {
   background-color: var(--white);
-  border-radius: 0 0 10px 10px; /* only add border -radius on the bottom right and left */
+
+  /* changed the top left-right value from 0 to 10px this fixes the white space bug that appeared when i added border-radius on the img 
+  */
+  border-radius: 10px 10px 10px 10px;
 }
+
 .card-image-container img {
   /*control the width of the mobile image it should not overflow, but if i set max-width 100%(max-inline-size) there is too much white space
   inside of the img container which is the  picture element
@@ -129,7 +143,7 @@ a {
   color: var(--white);
 }
 
-/*----------------ATTRIBUTION STYLES----------------------- */
+/*-------------------------------------------------------ATTRIBUTION STYLES-------------------------------------------------------*/
 
 .attribution {
   padding-block-start: 1rem; /*add some space at the top  */
@@ -139,4 +153,20 @@ a {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/*-------------------------------------------------------MEDIA QUERY------------------------------------------------------- */
+/*first media query will start at 800px cuz thats when i use the desktop image(see html file source element)
+and thats when i might have space to get the image and the content section next to each other 
+second media query breakpoint will be for 1000px or 1024px, and finally MAYBE a third one for 1200 or 1400px + 
+
+*/
+
+@media screen and (min-width: 800px) {
+  .container {
+    background-color: dodgerblue;
+  }
+  .card {
+    max-width: 700px;
+  }
 }
