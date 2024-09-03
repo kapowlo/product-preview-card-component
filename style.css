@@ -148,7 +148,10 @@ solution: fixed it by changing the border-radius on the card (top left/right) fr
 .attribution {
   padding-block-start: 1rem; /*add some space at the top  */
   text-align: center;
-  font-size: 0.51rem;
+
+  /*makes the attribution text more responsive by telling it to grow based on viewport width 
+  but don't go above max or below min values */
+  font-size: clamp(0.49rem, 0.35rem + 1vw, 0.88rem);
 }
 
 .attribution a {
@@ -156,17 +159,55 @@ solution: fixed it by changing the border-radius on the card (top left/right) fr
 }
 
 /*-------------------------------------------------------MEDIA QUERY------------------------------------------------------- */
-/*first media query will start at 800px cuz thats when i use the desktop image(see html file source element)
-and thats when i might have space to get the image and the content section next to each other 
-second media query breakpoint will be for 1000px or 1024px, and finally MAYBE a third one for 1200 or 1400px + 
-
-*/
 
 @media screen and (min-width: 800px) {
+  /*height of body needs to fill up the page and container should fill up the body */
+  html,
+  body,
   .container {
-    background-color: dodgerblue;
+    height: 100%;
+  }
+
+  .container {
+    /*flex box will allow me to center both card and attribution text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .card {
-    max-width: 700px;
+    max-inline-size: 700px;
+    margin-block-start: 1em; /*similar to margin top but will change based on the writing mode */
+
+    /*puts the img and the content section next to each other */
+    display: flex;
+  }
+
+  .card-image-container,
+  .card-content {
+    /*similar to width, makes sure both the card and the content section is 
+    taking 50% of the space inside of container */
+    inline-size: 50%;
+  }
+  .card-image-container img {
+    /*similar to height, makes sure the card image is not taller than its container */
+    block-size: 100%;
+
+    /*remove the border-radius on the top right and bottom right on the image 
+    i have to do it this way if i use border-top-right-radius:0; and border-bottom-right-radius:0; 
+    it doesn't work it removes the image's border-radius on the bottom and on the top right
+    and only keeps the border-radius on the top left
+    */
+    border-radius: 10px 0 0 10px; /*top left,right  bottom left,right  */
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+  /*between 800px and 1200px there is a bit too much white space  inside of the card 
+  so i'll use flexbox to distribute the space equally */
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
 }
