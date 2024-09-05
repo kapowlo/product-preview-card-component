@@ -106,7 +106,7 @@ solution: fixed it by changing the border-radius on the card (top left/right) fr
   font-family: "Fraunces", serif; /*font Weight: 700 used for the big bolded title */
   font-weight: 700;
   /*at the smallest screen 320px don't go below 28px at largest it stops at 43 ish px */
-  font-size: clamp(1.25rem, 1.2rem + 1.5vw, 3rem);
+  font-size: clamp(1.25rem, 1.2rem + 1.5vw, 2.5rem);
 }
 .card__info {
   margin-block-end: var(--small-margin);
@@ -126,7 +126,7 @@ solution: fixed it by changing the border-radius on the card (top left/right) fr
 
 .card__price-wrapper p:nth-child(1) {
   /*selects only the first p element */
-  font-size: clamp(1.25rem, 1.2rem + 1.5vw, 3rem);
+  font-size: clamp(1.25rem, 1.2rem + 1.5vw, 2.5rem);
 }
 .card__price-wrapper p:last-child {
   /*selects only the second p element which happens to be the last child   */
