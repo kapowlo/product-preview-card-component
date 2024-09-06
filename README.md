@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [ https://www.frontendmentor.io/solutions/mobile-first-product-preview-card-component-wOpqxP8MiZ]
+- Live Site URL: [ https://kapowlo.github.io/product-preview-card-component/]
 
 ## My process
 
@@ -46,15 +46,15 @@ Users should be able to:
 
 ### What I learned
 
-This was my first time using the picture element
+This was my first time using the picture element.
+
+I shouldn't use a width and a height attribute for my source element
 
 ```html
 <picture>
   <source
     media="(min-width: 800px)"
     srcset="images/image-product-desktop.jpg"
-    width="600"
-    height="900"
   />
   <img
     src="images/image-product-mobile.jpg"
@@ -65,10 +65,12 @@ This was my first time using the picture element
 </picture>
 ```
 
+I should not nest an anchor tag inside of a button.Instead I should style the anchor tag to look like a button
+
 ### Continued development
 
 I want to start using picture elements or srcset attribute + width descriptor along with sizes attribute in my html files to give the proper images to the user based on their device's viewport width.
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@kapowlo](https://www.frontendmentor.io/home)
