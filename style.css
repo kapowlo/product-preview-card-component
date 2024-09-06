@@ -198,7 +198,8 @@ solution: fixed it by changing the border-radius on the card (top left/right) fr
     it doesn't work it removes the image's border-radius on the bottom and on the top right
     and only keeps the border-radius on the top left
     */
-    border-radius: 10px 0 0 10px; /*top left,right  bottom left,right  */
+
+    border-radius: 10px 0 0 10px; /*correct order: top left,top right  bottom right, bottom left */
   }
 
   /* after reducing the max value of my clamp function from 1rem to 0.8rem(see code lines from 44 to 48),
