@@ -216,6 +216,10 @@ solution: fixed it by changing the border-radius on the card (top left/right) fr
     flex-direction: column;
     justify-content: space-evenly;
   }
+  .card__title,
+  .card__info {
+    max-inline-size: 85%; /*stops h1 title and paragraph from getting too long */
+  }
 
   button {
     inline-size: 95%;
