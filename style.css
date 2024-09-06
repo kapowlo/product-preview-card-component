@@ -33,7 +33,9 @@ button {
   border-radius: 8px;
   inline-size: 100%; /*similar to width */
 
-  font-size: inherit;
+  font-family: inherit; /*no need to set font-size here because I already set it via class selector .small
+  instead i have to use inherit here so the button inherits the 'Montserrat' font family
+  */
 }
 button:hover,
 button:focus {
@@ -41,8 +43,7 @@ button:focus {
   background-color: hsl(158, 36%, 17%);
 }
 
-.small,
-button.small {
+.small {
   /*text should not get below 13px on small screens or above 20px on very large screens */
   font-size: clamp(0.69rem, 0.45rem + 1.2vw, 0.8rem);
 }
