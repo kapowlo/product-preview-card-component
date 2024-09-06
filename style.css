@@ -29,10 +29,11 @@ body {
 
 button {
   background-color: var(--dark-cyan);
-  padding: 9px 18px;
+  padding: 13px 18px;
   border-radius: 8px;
   inline-size: 100%; /*similar to width */
 
+  font-weight: 600;
   font-family: inherit; /*no need to set font-size here because I already set it via class selector .small
   instead i have to use inherit here so the button inherits the 'Montserrat' font family
   */
@@ -113,6 +114,7 @@ solution: fixed it by changing the border-radius on the card (top left/right) fr
   margin-block-end: var(--small-margin);
   color: var(--dark-grayish);
   font-weight: 500;
+  line-height: 1.7;
 }
 
 .card__price-wrapper {
@@ -213,5 +215,9 @@ solution: fixed it by changing the border-radius on the card (top left/right) fr
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+  }
+
+  button {
+    inline-size: 95%;
   }
 }
