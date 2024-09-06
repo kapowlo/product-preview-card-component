@@ -131,7 +131,10 @@ solution: fixed it by changing the border-radius on the card (top left/right) fr
 }
 .card__price-wrapper p:last-child {
   /*selects only the second p element which happens to be the last child   */
-  font-size: clamp(0.69rem, 0.45rem + 1.2vw, 1rem);
+  font-size: clamp(0.69rem, 0.45rem + 1.2vw, 0.8rem);
+  font-weight: 300;
+
+  align-self: center; /*the smaller price text should be centered */
 }
 
 .card button {
