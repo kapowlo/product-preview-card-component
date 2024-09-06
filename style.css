@@ -44,7 +44,7 @@ button:focus {
 .small,
 button.small {
   /*text should not get below 13px on small screens or above 20px on very large screens */
-  font-size: clamp(0.69rem, 0.45rem + 1.2vw, 1rem);
+  font-size: clamp(0.69rem, 0.45rem + 1.2vw, 0.8rem);
 }
 
 a {
@@ -200,10 +200,9 @@ solution: fixed it by changing the border-radius on the card (top left/right) fr
     */
     border-radius: 10px 0 0 10px; /*top left,right  bottom left,right  */
   }
-}
 
-@media screen and (min-width: 800px) and (max-width: 1200px) {
-  /*between 800px and 1200px there is a bit too much white space  inside of the card 
+  /* after reducing the max value of my clamp function from 1rem to 0.8rem(see code lines from 44 to 48),
+  there is a bit too much white space  inside of the card -below the button- because the paragraph text is much smaller now.
   so i'll use flexbox to distribute the space equally */
   .card-content {
     display: flex;
